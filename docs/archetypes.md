@@ -12,8 +12,8 @@
 |  |  | **Social Deduction** — Trust nobody, sus everyone, lie with confidence, and watch the group chat explode. | Among Us, Fortnite (party mode) / Fall Guys |
 | **The Experience Chaser & Mastermind** | I’m here for the full experience — finish the story, master the systems, and absolutely get my money’s worth. | **Open-World Action** — Big map, side quests, questionable decisions, and 100 hours disappearing overnight. | Elden Ring, Crimson Desert |
 |  |  | **Narrative / Cinematic** — Give me the plot, the drama, the lore, and something emotionally devastating at the end. | Baldur's Gate 3, Resident Evil: Requiem |
-|  |  | **Roguelike / Systems** — Fail, learn, upgrade, repeat. One more run™ somehow becomes three hours. | Slay the Spire 2, ARC Raiders |
-|  |  | **Racing / Driving** — Fast cars, clean lines, questionable driving decisions. Basically therapy, but at 200 mph. | Forza Horizon 6, 007 First Light |
+|  |  | **Roguelike / Systems** — Fail, learn, upgrade, repeat. One more run™ somehow becomes three hours. | Slay the Spire 2, Hades II |
+|  |  | **Racing / Driving** — Fast cars, clean lines, questionable driving decisions. Basically therapy, but at 200 mph. | Forza Horizon 6, Mario Kart World |
 | **The Loyal Service-Game Regular** | I’m here because it’s *my game*. New season? New update? I’ll be there. | **Sports Franchise** — Same sport, new roster, new season, same obsession. | EA Sports FC 26, NBA 2K26 |
 |  |  | **Gacha / Live-Service RPG** — Daily login, events, grinding, collecting, and absolutely normal levels of attachment to fictional characters. | Genshin Impact, Honkai: Star Rail |
 |  |  | **Puzzle / Match-3** — Quick little brain break that somehow turns into “okay, just one more level.” | Candy Crush Saga, Royal Match |
