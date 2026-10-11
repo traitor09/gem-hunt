@@ -4,10 +4,54 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
-<title>Games</title>
+<title>taste check</title>
 </head>
 <body>
-<header>Games</header>
-<a id="start" href="q1.html">Start</a>
+<header class="top">
+  <h1>here to find out ur taste in games?</h1>
+  <p>pick one. we time u. then u tell us how it felt.</p>
+</header>
+
+<section class="line">
+  <div class="field">
+    <label>session length</label>
+    <div class="steps">
+      <button class="step" aria-pressed="true"></button>
+      <button class="step"></button>
+      <button class="step"></button>
+      <button class="step"></button>
+      <button class="step"></button>
+      <button class="step"></button>
+    </div>
+    <p class="readout" id="dur">0.5 min</p>
+  </div>
+
+  <div class="field">
+    <label>you are a</label>
+    <div class="steps">
+      <button class="step" data-mark></button>
+      <button class="step" data-mark></button>
+      <button class="step" data-mark></button>
+      <button class="step" data-mark></button>
+    </div>
+    <p class="readout" id="tier">casual</p>
+  </div>
+</section>
+
+<section class="row">
+  <a class="card" data-pick="minecraft" href="games/minecraft/index.html">
+    <img src="img/minecraft.png" alt="Minecraft">
+    <span>Minecraft</span>
+  </a>
+  <a class="card" data-pick="tetris" href="games/tetris/index.html">
+    <img src="img/tetris.png" alt="Tetris">
+    <span>Tetris</span>
+  </a>
+</section>
+
+<section class="top"><h1>your chart</h1><p id="note"></p></section>
+<svg id="plot"></svg>
+
+<script src="app.js"></script>
 </body>
 </html>
