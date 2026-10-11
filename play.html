@@ -3,12 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>speedrun</title>
 <link rel="stylesheet" href="style.css">
-<title>playing</title>
 </head>
-<body>
-<div id="timer"></div>
-<iframe id="stage"></iframe>
+<body class="view">
+<div class="hud">
+  <div class="tag" id="title">SPEEDRUN</div>
+  <div class="clock" id="timer">00:30</div>
+  <a href="index.html" class="ghost">EXIT</a>
+</div>
+<iframe id="stage" class="stage" allow="autoplay; fullscreen; keyboard"></iframe>
+<div id="alert" class="modal hide">
+  <div class="sheet">
+    <div class="badge">LIMIT EXHAUSTED</div>
+    <h3 class="alert-title">SESSION TIME HAS EXPIRED</h3>
+    <p class="alert-text">Your chosen time limit has been completely exhausted. Game inputs have been severed. Complete your 3-question evaluation now.</p>
+    <button id="proceed" class="prime">PROCEED TO REVIEW</button>
+  </div>
+</div>
 <script src="run.js"></script>
 </body>
 </html>

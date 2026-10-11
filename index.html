@@ -3,54 +3,143 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
 <title>taste check</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="top">
-  <h1>here to find out ur taste in games?</h1>
-  <p>pick one. we time u. then u tell us how it felt.</p>
+<nav class="bar">
+  <div class="brand">TASTE CHECK</div>
+  <div class="menu">
+    <a href="#catalog" class="tab">GAMES</a>
+    <a href="#profile" class="tab">PROFILE</a>
+    <button id="reset" class="ghost">RESET</button>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="meta">
+    <span class="pill">GEN-Z DOPAMINE AUDIT</span>
+    <h1 class="lead">here to know your taste in games?</h1>
+    <p class="sub">pick one. survive the clock. tell us the damage. unlock your true dev and grind archetype.</p>
+    <div class="actions">
+      <button id="launch" class="prime">SPEEDRUN NOW</button>
+      <a href="#meter" class="second">SET TIMER</a>
+    </div>
+  </div>
 </header>
 
-<section class="line">
-  <div class="field">
-    <label>session length</label>
-    <div class="steps">
-      <button class="step" aria-pressed="true"></button>
-      <button class="step"></button>
-      <button class="step"></button>
-      <button class="step"></button>
-      <button class="step"></button>
-      <button class="step"></button>
+<section id="meter" class="panel">
+  <div class="gauge">
+    <div class="row">
+      <span class="tag">SESSION TIME LIMIT</span>
+      <span id="dur" class="dur">0.5 MIN (30S)</span>
     </div>
-    <p class="readout" id="dur">0.5 min</p>
-  </div>
-
-  <div class="field">
-    <label>you are a</label>
-    <div class="steps">
-      <button class="step" data-mark></button>
-      <button class="step" data-mark></button>
-      <button class="step" data-mark></button>
-      <button class="step" data-mark></button>
+    <div class="meter">
+      <div class="rail"></div>
+      <div class="steps">
+        <button class="step" data-time="30" aria-pressed="true"><span class="pip"></span><span class="lbl">30s</span></button>
+        <button class="step" data-time="60"><span class="pip"></span><span class="lbl">1m</span></button>
+        <button class="step" data-time="90"><span class="pip"></span><span class="lbl">1.5m</span></button>
+        <button class="step" data-time="120"><span class="pip"></span><span class="lbl">2m</span></button>
+        <button class="step" data-time="150"><span class="pip"></span><span class="lbl">2.5m</span></button>
+        <button class="step" data-time="180"><span class="pip"></span><span class="lbl">3m</span></button>
+      </div>
     </div>
-    <p class="readout" id="tier">casual</p>
   </div>
 </section>
 
-<section class="row">
-  <a class="card" data-pick="minecraft" href="games/minecraft/index.html">
-    <img src="img/minecraft.png" alt="Minecraft">
-    <span>Minecraft</span>
-  </a>
-  <a class="card" data-pick="tetris" href="games/tetris/index.html">
-    <img src="img/tetris.png" alt="Tetris">
-    <span>Tetris</span>
-  </a>
+<main id="catalog" class="catalog">
+  <div class="section">
+    <div class="head">
+      <h2 class="title">TRENDING SPEEDRUNS</h2>
+      <span class="hint">SELECT A GAME TO START TIMER</span>
+    </div>
+    <div class="scroller" id="row1"></div>
+  </div>
+
+  <div class="section">
+    <div class="head">
+      <h2 class="title">HIGH DEV COMPLEXITY</h2>
+      <span class="hint">HEAVY ENGINEERING & MECHANICS</span>
+    </div>
+    <div class="scroller" id="row2"></div>
+  </div>
+
+  <div class="section">
+    <div class="head">
+      <h2 class="title">ALL AVAILABLE GAMES</h2>
+      <span class="hint" id="count">0 PLAYED</span>
+    </div>
+    <div class="grid" id="full"></div>
+  </div>
+</main>
+
+<section id="profile" class="profile">
+  <div class="head">
+    <h2 class="title">YOUR GAMER PROFILE</h2>
+    <span class="hint" id="note">RATE GAMES TO UNLOCK GRAPH</span>
+  </div>
+  <div class="summary" id="stats"></div>
+  <div class="wrap">
+    <svg id="plot" class="plot"></svg>
+  </div>
+  <div id="cards" class="feed"></div>
 </section>
 
-<section class="top"><h1>your chart</h1><p id="note"></p></section>
-<svg id="plot"></svg>
+<div id="play" class="view hide">
+  <div class="hud">
+    <div class="tag" id="title">GAME</div>
+    <div class="clock" id="timer">00:30</div>
+    <button id="quit" class="ghost">ABORT</button>
+  </div>
+  <iframe id="stage" class="stage" allow="autoplay; fullscreen; keyboard"></iframe>
+</div>
+
+<div id="alert" class="modal hide">
+  <div class="sheet">
+    <div class="badge">LIMIT EXHAUSTED</div>
+    <h3 class="alert-title">SESSION TIME HAS EXPIRED</h3>
+    <p class="alert-text">Your chosen time limit has been completely exhausted. Game inputs have been severed. Complete your 3-question evaluation now.</p>
+    <button id="proceed" class="prime">PROCEED TO REVIEW</button>
+  </div>
+</div>
+
+<div id="review" class="modal hide">
+  <div class="sheet form">
+    <div class="badge" id="name">REVIEW</div>
+    <h3 class="form-title">EVALUATE YOUR EXPERIENCE</h3>
+
+    <div class="group">
+      <label class="q-label" for="pain">1. how much did it hurt to stop playing the game</label>
+      <div class="slider-row">
+        <input type="range" id="pain" min="1" max="10" value="5">
+        <span id="pain-num" class="score">5 / 10</span>
+      </div>
+    </div>
+
+    <div class="group">
+      <label class="q-label">2. did you have a rush of dopamine</label>
+      <div class="stars" id="stars">
+        <button type="button" class="star" data-val="1">★</button>
+        <button type="button" class="star" data-val="2">★</button>
+        <button type="button" class="star" data-val="3">★</button>
+        <button type="button" class="star" data-val="4">★</button>
+        <button type="button" class="star" data-val="5">★</button>
+      </div>
+      <span id="star-num" class="score">0 / 5 STARS</span>
+    </div>
+
+    <div class="group">
+      <label class="q-label" for="hours">3. would u play this game continuously for x hours</label>
+      <div class="input-row">
+        <input type="number" id="hours" min="1" max="10" value="3">
+        <span class="unit">HOURS (1 - 10)</span>
+      </div>
+    </div>
+
+    <button type="button" id="send" class="prime">SUBMIT & RETURN</button>
+  </div>
+</div>
 
 <script src="app.js"></script>
 </body>
